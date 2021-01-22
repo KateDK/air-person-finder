@@ -1,16 +1,19 @@
-.Header {
+.Header-border {
+  position: absolute;
+  min-width: 1440px;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 99.82%;
   border-top: 3.43px solid #0addd7;
 }
-.logo {
-  left: 9.17%;
-  right: 86.64%;
-  top: 1.04%;
-  bottom: 97.72%;
-}
+
 .Header-logo {
   position: absolute;
+  top: 1.04%;
   left: 9.17%;
   right: 86.64%;
-  top: 1.04%;
+  bottom: 97.72%;
+  margin-top: 20px;
   bottom: 97.72%;
 }
