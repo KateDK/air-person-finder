@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PersonCard from './PersonCard';
 import MOCK_DATA from './MOCK_DATA.json';
 
 const Container = () => {
@@ -19,7 +20,12 @@ const Container = () => {
         placeholder="Type a name..."
       ></input>
       {peopleList.map((person) => (
-        <h5>{person.name}</h5>
+        <PersonCard
+          name={person.name}
+          avatar={person.avatar}
+          description={person.description}
+          key={person.id}
+        />
       ))}
     </div>
   );
