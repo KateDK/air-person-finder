@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PersonCard from './PersonCard';
 import MOCK_DATA from './MOCK_DATA.json';
+import './Container.css';
 
 const Container = () => {
   const [peopleList] = useState(MOCK_DATA);
@@ -13,6 +14,7 @@ const Container = () => {
         looking for below into the search box!
       </p>
       <input
+        clasName="Container-input"
         name="name"
         // value={props.todo.todoText}
         type="text"
