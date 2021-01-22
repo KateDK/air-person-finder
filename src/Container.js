@@ -20,7 +20,9 @@ const Container = () => {
         you’ve come to the right place! Just type the name of the person you are
         looking for below into the search box!
       </p>
+      <label htmlFor="namedInput">Name:</label>
       <input
+        id="namedInput"
         className="Container-input"
         name="name"
         value={value}
@@ -28,6 +30,7 @@ const Container = () => {
         onChange={(e) => setValue(e.target.value)}
         placeholder="Type a name..."
       ></input>
+
       {peopleList
         .filter((person) => filterLogic(person))
         .map((person) => (
