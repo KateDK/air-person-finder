@@ -5,6 +5,13 @@ import './Container.css';
 
 const Container = () => {
   const [peopleList] = useState(MOCK_DATA);
+  const [value, setValue] = useState('');
+
+  const filterLogic = (person) => {
+    const lowercaseName = person.name.toLowerCase();
+    const lowerCaseVal = value.toLocaleLowerCase();
+    return lowercaseName.includes(lowerCaseVal);
+  };
   return (
     <div className="Container">
       <h1 className="Container-header">The Person Finder</h1>
@@ -14,21 +21,23 @@ const Container = () => {
         looking for below into the search box!
       </p>
       <input
-        clasName="Container-input"
+        className="Container-input"
         name="name"
-        // value={props.todo.todoText}
+        value={value}
         type="text"
-        onChange={(e) => console.log(e.target.value)}
+        onChange={(e) => setValue(e.target.value)}
         placeholder="Type a name..."
       ></input>
-      {peopleList.map((person) => (
-        <PersonCard
-          name={person.name}
-          avatar={person.avatar}
-          description={person.description}
-          key={person.id}
-        />
-      ))}
+      {peopleList
+        .filter((person) => filterLogic(person))
+        .map((person) => (
+          <PersonCard
+            name={person.name}
+            avatar={person.avatar}
+            description={person.description}
+            key={person.id}
+          />
+        ))}
     </div>
   );
 };
