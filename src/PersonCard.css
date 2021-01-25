@@ -24,3 +24,9 @@
 .PersonCard-info h3 {
   margin-bottom: 20px;
 }
+
+@media screen and (max-width: 600px) {
+  .PersonCard {
+    padding-bottom: 24px;
+  }
+}
