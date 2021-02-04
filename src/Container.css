@@ -60,5 +60,5 @@
 }
 
 label[for='namedInput'] {
-  display: none;
+  visibility: hidden;
 }
