@@ -72,12 +72,11 @@ const Container = () => {
           {peopleList
             .filter((person) => filterLogic(person))
             .map((person) => (
-              <li>
+              <li key={person.id}>
                 <PersonCard
                   name={person.name}
                   avatar={person.avatar}
                   description={person.description}
-                  key={person.id}
                 />
               </li>
             ))}
