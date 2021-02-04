@@ -4,10 +4,9 @@ import logo from './Union.svg';
 
 const Header = () => {
   return (
-    <div className="Header">
-      <div className="Header-border" />
+    <header className="Header Header-border">
       <img className="Header-logo" src={logo} alt="Logo" />
-    </div>
+    </header>
   );
 };
 
