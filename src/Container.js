@@ -65,16 +65,20 @@ const Container = () => {
         hasMore={hasMore}
         loader={<h4>Loading...</h4>}
       >
-        {peopleList
-          .filter((person) => filterLogic(person))
-          .map((person) => (
-            <PersonCard
-              name={person.name}
-              avatar={person.avatar}
-              description={person.description}
-              key={person.id}
-            />
-          ))}
+        <ul className="people-list">
+          {peopleList
+            .filter((person) => filterLogic(person))
+            .map((person) => (
+              <li>
+                <PersonCard
+                  name={person.name}
+                  avatar={person.avatar}
+                  description={person.description}
+                  key={person.id}
+                />
+              </li>
+            ))}
+        </ul>
       </InfiniteScroll>
     </div>
   );
