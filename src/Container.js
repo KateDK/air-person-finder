@@ -11,10 +11,12 @@ const Container = () => {
     prev: 0,
     next: 10,
   });
+
   const [hasMore, setHasMore] = useState(true);
   const [current, setCurrent] = useState(
     peopleList.slice(count.prev, count.next)
   );
+
   const getMoreData = () => {
     if (current.length === peopleList.length) {
       setHasMore(false);
@@ -30,6 +32,7 @@ const Container = () => {
       next: prevState.next + 10,
     }));
   };
+
   const filterLogic = (person) => {
     const lowercaseName = person.name.toLowerCase();
     const lowerCaseVal = value.toLocaleLowerCase();
@@ -44,16 +47,18 @@ const Container = () => {
         you’ve come to the right place! Just type the name of the person you are
         looking for below into the search box!
       </p>
-      <label htmlFor="namedInput">Name:</label>
-      <input
-        id="namedInput"
-        className="Container-input"
-        name="name"
-        value={value}
-        type="text"
-        onChange={(e) => setValue(e.target.value)}
-        placeholder="Type a name..."
-      ></input>
+      <form>
+        <label htmlFor="namedInput">Name:</label>
+        <input
+          id="namedInput"
+          className="Container-input"
+          name="name"
+          value={value}
+          type="text"
+          onChange={(e) => setValue(e.target.value)}
+          placeholder="Type a name..."
+        />
+      </form>
       <InfiniteScroll
         dataLength={current.length}
         next={getMoreData}
