@@ -21,6 +21,7 @@
 
 form {
   width: 100%;
+  display: flex;
 }
 
 .Container-p {
@@ -56,6 +57,12 @@ form {
 
 ::placeholder {
   color: #393939;
+}
+
+button.input-submit {
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 ul.people-list {

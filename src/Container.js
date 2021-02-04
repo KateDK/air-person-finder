@@ -58,6 +58,9 @@ const Container = () => {
           onChange={(e) => setValue(e.target.value)}
           placeholder="Type a name..."
         />
+        <button className="input-submit" type="submit">
+          submit
+        </button>
       </form>
       <InfiniteScroll
         dataLength={current.length}
